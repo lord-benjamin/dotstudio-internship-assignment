@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100px;
+  font-family: "Gotham", sans-serif;
+}
+:root {
+  --blue: #114a8d;
+  --yellow: #ffc758;
+}
+@font-face {
+  font-family: Gotham;
+  src: url(resources/fonts/gotham/GothamBook.ttf);
+}
+@font-face {
+  font-family: GothamBlack;
+  src: url(resources/fonts/gotham/Gotham-Black.otf);
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin: auto;
+  width: max-content;
+  padding: 48px;
+}
+.heading {
+  color: black;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  font-family: "GothamBlack", sans-serif;
+}
+.heading span {
+  color: var(--blue);
+  font-size: 40px;
+  font-family: "GothamBlack", sans-serif;
+}
+.row {
+  display: flex;
+  height: 330px;
+  gap: 48px;
+}
+.card {
+  height: 100%;
+  width: 511px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 145px;
+  background: linear-gradient(to top, black, transparent);
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding: 0 50px 20px;
+}
+.bottom h1 {
+  font-size: 28px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-family: "GothamBlack", sans-serif;
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+.bottom h1 span {
+  color: var(--yellow);
+  font-size: 28px;
+  font-family: "GothamBlack", sans-serif;
+}
+.border {
+  height: 294px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  overflow: hidden;
+}
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 75%;
+  left: -100%;
+  background-color: #114b8db9;
+  backdrop-filter: blur(7px);
+  transition: all 0.3s ease-out;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  z-index: 1;
+}
+.content h1 {
+  font-size: 30px;
+  font-family: "GothamBlack", sans-serif;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease 0.1s;
+}
+.content h1 span {
+  font-size: 30px;
+  color: var(--yellow);
+  font-family: "GothamBlack", sans-serif;
+}
+.content p {
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease 0.2s;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 50%;
+  }
+  .bottom {
+    padding: 0 20px 20px;
+  }
+  .bottom h1 {
+    font-size: 25px;
+  }
+  .bottom h1 span {
+    font-size: 25px;
+  }
+  .content h1 {
+    font-size: 25px;
+  }
+  .content h1 span {
+    font-size: 25px;
+  }
+  .content p {
+    font-size: 15px;
+  }
+}
+@media (max-width: 980px) {
+  .main {
+    gap: 24px;
+    padding: 24px;
+  }
+  .heading {
+    font-family: "Gotham", sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+  }
+  .heading span {
+    font-family: "Gotham", sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+  }
+  .row {
+    gap: 24px;
+    height: 280px;
+  }
+  .bottom h1 {
+    font-family: "Gotham", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+  }
+  .bottom h1 span {
+    font-family: "Gotham", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+  }
+  .border {
+    height: 250px;
+  }
+  .content h1 {
+    font-family: "Gotham", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+  }
+  .content h1 span {
+    font-family: "Gotham", sans-serif;
+    font-weight: 900;
+    font-size: 22px;
+  }
+}
+@media (max-width: 780px) {
+  .row {
+    flex-direction: column;
+    height: 560px;
+  }
+  .card {
+    width: 100%;
+    height: 50%;
+  }
+  .card img {
+    object-position: center;
+  }
+  .border {
+    height: 240px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .row {
+    width: 100%;
+    height: 100%;
+  }
+  .card {
+    height: 250px;
+    width: 100%;
+  }
+  .border {
+    height: 220px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .card {
+    height: 200px;
+  }
+  .bottom {
+    padding: 0 20px 15px;
+  }
+  .bottom h1 {
+    font-size: 18px;
+  }
+  .bottom h1 span {
+    font-size: 18px;
+  }
+  .border {
+    height: 180px;
+    padding: 28px;
+  }
+  .content {
+    gap: 8px;
+  }
+  .content h1 {
+    font-size: 18px;
+  }
+  .content h1 span {
+    font-size: 18px;
+  }
+  .content p {
+    font-size: 12px;
+  }
+}
